@@ -4768,6 +4768,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   health: 1
   maxHealth: 10
+  spriteRenderer: {fileID: 1762973502}
+  playerMovement: {fileID: 1762973498}
 --- !u!114 &1762973506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4795,6 +4797,7 @@ MonoBehaviour:
   - {fileID: 1110846047}
   - {fileID: 1978356501}
   - {fileID: 1359874798}
+  playerHealth: {fileID: 1762973505}
 --- !u!1 &1770431748
 GameObject:
   m_ObjectHideFlags: 0
