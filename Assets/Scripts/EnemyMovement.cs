@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     public GameObject pointA;
     public GameObject pointB;

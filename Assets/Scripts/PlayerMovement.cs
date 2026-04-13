@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class MovementSystem : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public InputSystem_Actions actions;
     private float xPosLastFrame;
