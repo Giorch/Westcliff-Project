@@ -13,12 +13,14 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckRadius;
     public LayerMask groundLayer;
     bool isGrounded;
+    bool isJumping;
     SpriteRenderer spriteRenderer;
     [SerializeField] private Animator _animator;
     private void Awake()
     {
         xPosLastFrame = transform.position.x;
         actions = new InputSystem_Actions();
+        isJumping = false;
     }
 
     private void OnEnable()
@@ -67,6 +69,12 @@ public class PlayerMovement : MonoBehaviour
         if(ctx.performed && isGrounded)
         {
             rb.linearVelocityY = jumpForce;
+            isJumping = true;
+        }
+        else if (ctx.performed && isJumping)
+        {
+            rb.linearVelocityY = jumpForce;
+            isJumping = false;
         }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -98,8 +106,6 @@ public class PlayerMovement : MonoBehaviour
     {
         var velocity = move * speed;
         rb.linearVelocityX = velocity;
-        
-
     }
 
     private void OnDrawGizmosSelected()
